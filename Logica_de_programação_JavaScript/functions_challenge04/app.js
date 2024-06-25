@@ -19,7 +19,7 @@ function calcFatorial(numero) {
 }
 
 const fatorial = calcFatorial(7);
-console.log(`O fatorial é ${fatorial}`;)
+console.log(`O fatorial é ${fatorial}`);
 
 function usdtobrl (dolar) {
     const taxaCambio = 5.40;
