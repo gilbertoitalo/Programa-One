@@ -29,6 +29,10 @@ input1.focus();
 
 function encrypt() {
     const text = input1.value.trim();
+    if (!isValidText(text)){
+        showMessage('Texto inválido. Use apenas letras minúsculas e sem acento. ');
+            return;     
+    }
     if (text.length === 0) {
         showMessage('Nenhuma mensagem encontrada');
     } else {
@@ -45,6 +49,10 @@ function encrypt() {
 
 function decrypt() {
     const text = input1.value.trim();
+    if (!isValidText(text)){
+        showMessage('Texto inválido. Use apenas letras minúsculas e sem acento. ');
+            return;     
+    }
 
     if (text.length === 0) {
         showMessage('Nenhuma mensagem encontrada');
@@ -58,6 +66,11 @@ function decrypt() {
         input2.innerHTML = decryptedText;
         showCopyButton();
     }
+}
+
+function isValidText(text){
+    const regex = /^[a-z\s]+$/;
+    return regex.test(text);
 }
 
 function showMessage(msg) {
