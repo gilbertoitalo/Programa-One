@@ -6,9 +6,9 @@ const message = document.getElementById("msg");
 
 const button1 = document.querySelector('button.btn-1');
 const button2 = document.querySelector('button.btn-2');
-const micButton3 = document.getElementById('mic-btn');
+const micButton = document.getElementById('mic-btn');
 const noneMessage = document.getElementById('none');
-const copyButtonContainer = document.getElementById('copy');
+const copyButton = document.getElementById('copy');
 
 if (button1) {
     button1.onclick = encrypt;
@@ -16,9 +16,13 @@ if (button1) {
 if (button2) {
     button2.onclick = decrypt;
 }
-if (micButton3) { 
-       micButton3.onclick = startRecognition;
+if (micButton) { 
+    micButton.onclick = startRecognition;
 }
+if (copyButton){
+    copyButton.onclick = copy;      
+}
+
 
 noneMessage.innerHTML = '';
 input1.focus();
@@ -41,6 +45,7 @@ function encrypt() {
 
 function decrypt() {
     const text = input1.value.trim();
+
     if (text.length === 0) {
         showMessage('Nenhuma mensagem encontrada');
     } else {
@@ -67,15 +72,19 @@ function clearDisplay() {
 }
 
 function showCopyButton() {
-    copyButtonContainer.innerHTML = '<button class="button btn-3" onclick="copy()">Copiar</button>';
+    copyButton.innerHTML = '<button class="button btn-3" onclick="copy()">Copiar</button>';
 }
 
-function copy() {
-    input2.select();
-    document.execCommand('copy');
-    message.innerHTML = "O texto copiado já está na área de transferência!";
-    input1.value = "";
-    input1.focus();
+async function copy() {
+    try {
+        await navigator.clipboard.writeText(input2.value);
+        message.innerHTML = "O texto copiado com sucesso!";
+        input1.value = "";
+        input1.focus();
+    } catch (err) {
+        console.error('Falha ao copiar texto: ', err);
+        message.innerHTML = "Falha ao copiar texto. Tente novamente.";
+    }
 }
 
 function startRecognition() {
