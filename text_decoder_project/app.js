@@ -1,14 +1,25 @@
+document.addEventListener('DOMContentLoaded', () => {
+
 const input1 = document.querySelector('textarea#txt-area1');
 const input2 = document.querySelector('textarea#txt-area2');
 const message = document.getElementById("msg");
 
 const button1 = document.querySelector('button.btn-1');
 const button2 = document.querySelector('button.btn-2');
+const micButton3 = document.getElementById('mic-btn');
 const noneMessage = document.getElementById('none');
 const copyButtonContainer = document.getElementById('copy');
 
-button1.onclick = encrypt; 
-button2.onclick = decrypt;
+if (button1) {
+    button1.onclick = encrypt;
+}     
+if (button2) {
+    button2.onclick = decrypt;
+}
+if (micButton3) { 
+       micButton3.onclick = startRecognition;
+}
+
 noneMessage.innerHTML = '';
 input1.focus();
 
@@ -79,8 +90,10 @@ function startRecognition() {
         };
 
         recognition.onresult = function(event) {
-            const transcript = event.results[0][0].transcript;
+            console.log('Voice recognition result received', event.results);
+            let transcript = event.results[0][0].transcript;
             input1.value = transcript;
+            console.log('Transcribed text: ' , transcript);
         };
 
         recognition.onerror = function(event) {
@@ -94,5 +107,11 @@ function startRecognition() {
         recognition.start();
     } else {
         alert('Seu navegador não suporta a API de reconhecimento de voz.');
+        console.error('API de voz nao suportada');
     }
 }
+
+function normalizeText(text) {
+    return text.normalize('NFD').replce(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+});
