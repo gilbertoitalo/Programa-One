@@ -7,9 +7,8 @@ const button2 = document.querySelector('button.btn-2');
 const noneMessage = document.getElementById('none');
 const copyButtonContainer = document.getElementById('copy');
 
-button1.onclick = encrypt;
+button1.onclick = encrypt; 
 button2.onclick = decrypt;
-
 noneMessage.innerHTML = '';
 input1.focus();
 
