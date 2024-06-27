@@ -83,7 +83,7 @@ function startRecognition() {
         const recognition = new webkitSpeechRecognition();
         recognition.lang = 'pt-BR';
         recognition.continuous = false;
-        recognition.interimResults = false;
+        recognition.interimResults = true;
 
         recognition.onstart = function() {
             console.log('Voice recognition started. Try speaking into the microphone.');
@@ -91,20 +91,28 @@ function startRecognition() {
 
         recognition.onresult = function(event) {
             console.log('Voice recognition result received', event.results);
-            let transcript = event.results[0][0].transcript;
+            let transcript = '';
+            for (let i = 0; i < event.results.length; i++) {
+                transcript += event.results[i][0].transcript + '';
+            }
+            transcript = normalizeText(transcript.trim());
             input1.value = transcript;
             console.log('Transcribed text: ' , transcript);
         };
 
         recognition.onerror = function(event) {
             console.error('Error occurred in recognition: ' + event.error);
-        };
+            if (event.error === 'no-speech') {
+                alert('Nenhuma fala detectada. Por favor, fale claramente no microfone.');
+            }
+        }
 
         recognition.onend = function() {
             console.log('Voice recognition ended.');
         };
 
         recognition.start();
+        console.log('Recognition started');
     } else {
         alert('Seu navegador não suporta a API de reconhecimento de voz.');
         console.error('API de voz nao suportada');
@@ -112,6 +120,6 @@ function startRecognition() {
 }
 
 function normalizeText(text) {
-    return text.normalize('NFD').replce(/[\u0300-\u036f]/g, "").toLowerCase();
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 });
