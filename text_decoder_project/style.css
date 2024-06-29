@@ -2,10 +2,12 @@
 body {
     background-color: #F3F5FC;
     display: flex;
-    height: 90vh;
-    width: 90vw;
+    height: 100vh;
+    width: 100vw;
     min-height: 100%;
     font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    
 }
 
 .logo {
@@ -187,8 +189,20 @@ h3 {
     4px 4px 0 0 gray;
 }
 .btn-3:active {
-    box-shadow: none;
+    color: #0A3871;
+    border-color: #0F4C81;
+    background: #FFFFFF;
+    filter: drop-shadow(2px 4px 2px #00000025);
+}
 
+.mic:hover { 
+    color: #0A3871;
+    border-color: #0F4C81;
+    background: #FFFFFF;
+    filter: drop-shadow(2px 4px 2px #00000025); 
+
+
+    
 }
  /* descriptografar */
 #decrypt {

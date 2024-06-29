@@ -111,7 +111,7 @@ function startRecognition() {
             console.log('Voice recognition started. Try speaking into the microphone.');
         };
 
-        recognition.onresult = function(event) {
+        recognition.onresult = function(event) { 
             console.log('Voice recognition result received', event.results);
             let transcript = '';
             for (let i = 0; i < event.results.length; i++) {
@@ -136,7 +136,7 @@ function startRecognition() {
         recognition.start();
         console.log('Recognition started');
     } else {
-        alert('Seu navegador não suporta a API de reconhecimento de voz.');
+        alert('Seu navegador não suporta a API de reconhecimento de voz. Recomendamos Google Chorme ou Mozilla Firefox');
         console.error('API de voz nao suportada');
     }
 }
