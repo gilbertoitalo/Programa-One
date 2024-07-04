@@ -3,14 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
 const input1 = document.querySelector('textarea#txt-area1');
 const input2 = document.querySelector('textarea#txt-area2');
 const message = document.getElementById("msg");
-
+const darkModeButton = document.getElementById('dark-mode');
 const button1 = document.querySelector('button.btn-1');
 const button2 = document.querySelector('button.btn-2');
 const micButton = document.getElementById('mic-btn');
 const noneMessage = document.getElementById('none');
 const copyButton = document.getElementById('copy');
-
+const body = document.body;
 let previousText = '';
+noneMessage.innerHTML = '';
+input1.focus();
+input1.addEventListener('input',clearArea2);
+
+
 
 if (button1) {
     button1.onclick = encrypt;
@@ -24,10 +29,6 @@ if (micButton) {
 if (copyButton){
     copyButton.onclick = copy;      
 }
-
-
-noneMessage.innerHTML = '';
-input1.focus();
 
 function encrypt() {
     const text = input1.value.trim();
@@ -147,7 +148,6 @@ function normalizeText(text) {
     return text.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
-input1.addEventListener('input',clearArea2);
 
 function clearArea2(){
     const currentText = input1.value.trim();
@@ -156,6 +156,28 @@ function clearArea2(){
         previousText = currentText
     }
 }
+
+darkModeButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    saveThemePreference();
+});
+
+function saveThemePreference() {
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+function loadThemePreference() {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+        body.classList.add('dark-mode');
+    }
+}
+
+loadThemePreference();
 
 });
 

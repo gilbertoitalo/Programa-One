@@ -11,6 +11,58 @@ body {
     
 }
 
+body.dark-mode {
+    background-color: black;
+    color: white;
+    
+}
+
+body.dark-mode .encrypt textarea,
+body.dark-mode #decrypt textarea {
+    background-color: #333333;
+    color: #ffffff;
+    
+
+
+    
+}
+
+
+body.dark-mode .info p {
+    color: #ecdddd;
+}
+
+#dark-mode {
+    position: fixed;
+    bottom: 10px;
+    width: 70px;
+    top: 80%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+#dark-mode.dark-mode{
+    background-color: #FFFFFF;
+    color: #121212;
+}
+
+.main, .encrypt, .info, .buttons, .footer, #decrypt {
+    transition: all 0.3s;
+}
+
+body.dark-mode .main,
+body.dark-mode .encrypt,
+body.dark-mode .info,
+body.dark-mode .buttons,
+body.dark-mode .footer,
+body.dark-mode #decrypt {
+    background-color: #333;
+    color: #ddd;
+}
+
 
 .logo {
     margin: 30px 0 0 20px ;
