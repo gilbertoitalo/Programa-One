@@ -10,6 +10,8 @@ const micButton = document.getElementById('mic-btn');
 const noneMessage = document.getElementById('none');
 const copyButton = document.getElementById('copy');
 
+let previousText = '';
+
 if (button1) {
     button1.onclick = encrypt;
 }     
@@ -42,7 +44,7 @@ function encrypt() {
                                   .replace(/a/igm, 'ai')
                                   .replace(/o/igm, 'ober')
                                   .replace(/u/igm, 'ufat');
-        input2.innerHTML = encryptedText;
+        input2.value = encryptedText;
         showCopyButton();
     }
 }
@@ -63,7 +65,7 @@ function decrypt() {
                                   .replace(/ai/igm, 'a')
                                   .replace(/ober/igm, 'o')
                                   .replace(/ufat/igm, 'u');
-        input2.innerHTML = decryptedText;
+        input2.value = decryptedText;
         showCopyButton();
     }
 }
@@ -144,4 +146,16 @@ function startRecognition() {
 function normalizeText(text) {
     return text.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
+
+input1.addEventListener('input',clearArea2);
+
+function clearArea2(){
+    const currentText = input1.value.trim();
+    if  (currentText !== previousText){
+        input2.value = '';
+        previousText = currentText
+    }
+}
+
 });
+
