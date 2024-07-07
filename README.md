@@ -55,15 +55,10 @@ Obrigado    <img width="180px" src="https://cursos.alura.com.br/assets/images/ce
 
 
 
-**#challengeonedecodificador2**
-
-## Resultado do projeto:
-
-[📁 Repositório](https://github.com/AndressaDaCosta/codificador_decodificador_texto) |  [🌎 Página](https://andressadacosta.github.io/codificador_decodificador_texto/)
 
 # Desktop:
 <img src="">
 
 # Celular
-<img src="h" width="450"><img src="" width="440">
+<img src="" width="450"><img src="" width="440">
 
