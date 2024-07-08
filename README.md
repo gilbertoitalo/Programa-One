@@ -1,5 +1,5 @@
 # Programa One
-# Alura + Oracle ONE 👩🏻‍💻  <img align="right" src="https://cursos.alura.com.br/assets/images/certificates/new/logo/oracle-one-logo.png"><br><br> [<img src="https://avatars.githubusercontent.com/u/95485809?v=4" width="35" style="border-radius:50%">]("https://www.linkedin.com/in/gilbertoitalo/") 
+# Alura + Oracle ONE 👩🏻‍💻  <img align="right" src="https://cursos.alura.com.br/assets/images/certificates/new/logo/oracle-one-logo.png"><br><br> 
 
 # Codificador e Decodificador de Texto
 
@@ -57,8 +57,6 @@ Obrigado    <img width="180px" src="https://cursos.alura.com.br/assets/images/ce
 
 
 # Desktop:
-<img src="">
+<img src="/assets/images/Captura de ecrã 2024-07-08_135536.png">
 
-# Celular
-<img src="" width="450"><img src="" width="440">
 
