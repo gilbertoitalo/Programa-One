@@ -3,7 +3,7 @@
 
 # Codificador e Decodificador de Texto
 
-Challenge Oracle ONE Sprint 01: Primeiro desafio de Lógica de Programação responsivo, desenvolvido durante o curso #onenexteducation
+Challenge Oracle ONE: Primeiro desafio de Lógica de Programação responsivo, desenvolvido durante o curso #onenexteducation tem como objetivo criar um site que codifique e decodifique em texto.
 
 ### Sobre o projeto:
 
@@ -53,7 +53,13 @@ Além disso, utilizei as ferramentas [Trello](https://trello.com/b/vdOvBo96/proj
 Obrigado    <img width="180px" src="https://cursos.alura.com.br/assets/images/certificates/new/logo/oracle-alura.png">
 
 
+<div style="display:flex;" align="center">
+   <h2>Badge referente ao termino do Challenge</h2>
+ </div>
 
+   <div style="display:flex;" align="center">
+  <img src="/assets/images/Badge.png" width="400"/>
+</div>
 
 
 # Desktop:
