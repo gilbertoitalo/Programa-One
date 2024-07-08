@@ -13,7 +13,7 @@ Challenge Oracle ONE: Primeiro desafio de Lógica de Programação responsivo, d
   
    - Implementação do projeto com HTML, CSS e JavaScript, onde as letras: a, e, i, o e u são convertidas na ordem por: ai, enter, imes, ober e ufat, podendo ser copiado a área onde o texto for codificado.
 
- - Aprofundando no uso de JavaScript para adicionar funcionalidades ao sistema.
+   - Aprofundando no uso de JavaScript para adicionar funcionalidades ao sistema.
 
 ### Requisitos:
 
@@ -23,8 +23,16 @@ Challenge Oracle ONE: Primeiro desafio de Lógica de Programação responsivo, d
 
 Por exemplo: "gato" => "gaitober" gaitober" => "gato"
 
- - A página deve ter campos para inserção do texto a ser criptografado ou descriptografado, e a pessoa usuária deve poder escolher entre as duas opções O resultado deve ser exibido na tela. Extras:
+ - A página deve ter campos para inserção do texto a ser criptografado ou descriptografado, e a pessoa usuária deve poder escolher entre as duas opções.
+ 
+ ### Extras:
 - Um botão que copie o texto criptografado/descriptografado para a área de transferência - ou seja, que tenha a mesma funcionalidade do ctrl+ C ou da opção "copiar" do menu dos aplicativos.
+
+### Extras criados pelo próprio dev:
+
+- Um botão de microfone e uso de uma API de voz para transcrever para texto todo para minusculo de acordo com as regras propostas.
+
+- Um botao que aciona um modo escuro para facilitar a utilizacao nortuna, mehorando o UI/UX
 
 ### Conteúdos utilizados:
 
@@ -35,6 +43,7 @@ Cursos Alura:
  - Git e Github: controle e compartilhe seu código
  - Alura+: Como um(a) desenvolvedor(a) front-end utiliza o Figma 
 
+
 ### Aprendi:
 
 -	A sintaxe básica de JavaScript, HTML e CSS;
@@ -43,7 +52,7 @@ Cursos Alura:
 -	Utilizar arrays;
 -	Manipular elementos do HTML pelo DOM;
 -	Alterar estilo da página com CSS.
-
+- Implementar API de reconhecimento de voz
 
 
 
